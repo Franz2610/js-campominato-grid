@@ -15,5 +15,39 @@ Ad esempio:
 Di cosa ho bisogno per generare i numeri?
 Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 Le validazioni e i controlli possiamo farli anche in un secondo momento
- */
+difficoltà 1 => 100 caselle
+difficoltà 2 => 81 caselle
+difficoltà 3 => 49 caselle
+*/
 
+
+// Prendiamo dal nostro html il form con una const
+const formLevel = document.getElementById('levelForm')
+
+// Creiamo un evento al invio 
+formLevel.addEventListener('submit', play)
+
+//Creiamo la funzione play 
+
+function play(e){
+    e.preventDefault()
+    // Basta prendersi solo il valore
+    const level = document.getElementById('level').value
+    // console.log(level)
+
+    // creare una variabile per le celle
+    let squareNumbers;
+    switch(level){
+        case 'facile': 
+            squareNumbers = 100;
+            break;
+        case 'medio': 
+            squareNumbers = 81;
+            break;
+        case 'difficile': 
+            squareNumbers = 49;
+            break; 
+    }
+    // console.log(squareNumbers)
+    
+}
