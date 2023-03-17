@@ -1,0 +1,32 @@
+/*
+Creiamo un wrapper iniziale che contenga header main e footer
+creiamo un playground nel main dove andrà il nostro campo minato con annessi quadrati all'interno*/
+
+.wrapper{
+    width: 100%;
+    height: 100vh;
+    background-color: aquamarine;
+}
+header,
+footer{
+    background-color: white;
+    height: 80px;
+}
+main{
+    height: calc(100% - 160px);
+}
+#playground{
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+    display: flex;
+    flex-flow: row wrap;
+}
+.square{
+    width: calc(100% / 10);
+    height: calc(100% / 10);
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
