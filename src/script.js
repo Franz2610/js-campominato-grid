@@ -22,22 +22,37 @@ difficoltà 3 => 49 caselle
 
 
 // Prendiamo dal nostro html il form con una const
-const formLevel = document.getElementById('levelForm')
+const levelForm = document.getElementById('levelForm');
 
 // Creiamo un evento al invio 
-formLevel.addEventListener('submit', play)
+levelForm.addEventListener('submit', play);
+
+
+//funzione per creare la cella
+function drawSquare(index, numSquares) {
+    const square = document.createElement('div');
+    square.classList.add('square');
+    square.style.width = `calc(100% / ${numSquares})`;
+    square.style.height = square.style.width;
+    square.innerHTML = index;
+    return square;
+}
 
 //Creiamo la funzione play 
 
-function play(e){
-    e.preventDefault()
+function play(e) {
+    e.preventDefault();
+    const playground = document.getElementById('playground');
+    playground.innerHTML = '';
+
     // Basta prendersi solo il valore
-    const level = document.getElementById('level').value
-    // console.log(level)
+    const level = document.getElementById('level').value;
+    console.log(level);
 
     // creare una variabile per le celle
     let squareNumbers;
-    switch(level){
+
+    switch (level) {
         case 'facile': 
             squareNumbers = 100;
             break;
@@ -48,6 +63,22 @@ function play(e){
             squareNumbers = 49;
             break; 
     }
-    // console.log(squareNumbers)
+    console.log(squareNumbers);
     
+    // Determino il numero di celle per lato
+    let squareperRow = Math.sqrt(squareNumbers);
+    console.log(squareperRow);
+
+
+    // per il numero di celle genero la cella
+    for(let i=1; 1 <= squareNumbers; i++){
+
+        const square = drawSquare(i, squareperRow);
+
+        square.addEventListener('click', function () {
+            square.classList.add('safe');
+        });
+
+        playground.appendChild(square);
+    }
 }

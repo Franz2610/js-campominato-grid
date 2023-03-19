@@ -19,15 +19,18 @@ main{
 #playground{
     width: 500px;
     height: 500px;
-    border: 1px solid black;
     display: flex;
     flex-flow: row wrap;
 }
 .square{
+    cursor: pointer;
     width: calc(100% / 10);
     height: calc(100% / 10);
     border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.safe{
+    background-color: navy;
 }
