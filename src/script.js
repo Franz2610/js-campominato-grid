@@ -71,14 +71,13 @@ function play(e) {
 
 
     // per il numero di celle genero la cella
-    for(let i=1; 1 <= squareNumbers; i++){
-
+    for(let i=1 ; i <= squareNumbers; i++){
         const square = drawSquare(i, squareperRow);
 
         square.addEventListener('click', function () {
             square.classList.add('safe');
         });
-
         playground.appendChild(square);
     }
 }
+
